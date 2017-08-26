@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎修正
-// @namespace    https://blog.lilydjwg.me/
-// @version      0.1
+// @namespace    https://github.com/lilydjwg/tampermonkey-scripts
+// @version      0.2
 // @description  中键后台标签页、评论区 Tab 到提交按钮
 // @author       lilydjwg
 // @match        https://zhuanlan.zhihu.com/p/*
