@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         知乎修正
 // @namespace    https://github.com/lilydjwg/tampermonkey-scripts
-// @version      0.2
-// @description  中键后台标签页、评论区 Tab 到提交按钮
+// @version      0.3
+// @description  中键后台标签页、评论区 Tab 到提交按钮、图片立即加载
 // @author       lilydjwg
 // @match        https://zhuanlan.zhihu.com/p/*
 // @match        https://www.zhihu.com/*
@@ -22,6 +22,15 @@ const func = function() {
   const parent = content_node.parentNode
   parent.insertBefore(cloned, content_node)
   parent.removeChild(content_node)
+
+  for(let el of document.querySelectorAll('.PostIndex-content .VagueImage[data-src]')) {
+    const img = document.createElement('img')
+    img.src = el.dataset.src
+    const a = document.createElement('a')
+    a.href = el.dataset.src.replace(/_b(?=\.)/, '_r')
+    a.appendChild(img)
+    el.appendChild(a)
+  }
 }
 
 setTimeout(func, 500)
