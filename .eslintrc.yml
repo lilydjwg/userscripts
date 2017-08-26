@@ -1,0 +1,22 @@
+env:
+  es6: true
+  browser: true
+extends: 'eslint:recommended'
+rules:
+  indent:
+    - off
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - never
+  no-console:
+    - off
+  no-unused-vars:
+    - warn
+    - varsIgnorePattern: ^_
+      argsIgnorePattern: ^_
