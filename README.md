@@ -13,3 +13,9 @@ zhihu-tweak
 * 评论时，Tab 之后首先跳转到提交评论的按钮
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/zhihu-tweak.user.js)
+
+wikipedia-lang-reorder
+===
+* Move Chinese and English languages to the front in the language list
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/wikipedia-lang-reorder.user.js)
