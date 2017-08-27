@@ -5,7 +5,7 @@
 // @include        https://*.wikipedia.org/*
 // @include        https://*.wiktionary.org/*
 // @include        https://*.wikisource.org/*
-// @version	   1.0
+// @version	   1.0.1
 // @grant          none
 // ==/UserScript==
 
@@ -14,7 +14,8 @@
 
 const links = document.evaluate('//*[@id="p-lang"]//a[text()="中文" or text()="English"]', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null)
 let ul
-for(let link of links){
+for(let i=0, len=links.snapshotLength; i<len; i++){
+  let link = links.snapshotItem(i)
   ul = ul || link.parentNode.parentNode
   ul.insertBefore(link.parentNode, ul.firstChild)
 }
