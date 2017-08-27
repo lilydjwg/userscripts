@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎修正
 // @namespace    https://github.com/lilydjwg/tampermonkey-scripts
-// @version      0.3
+// @version      0.4
 // @description  中键后台标签页、评论区 Tab 到提交按钮、图片立即加载
 // @author       lilydjwg
 // @match        https://zhuanlan.zhihu.com/p/*
@@ -30,6 +30,10 @@ const func = function() {
     a.href = el.dataset.src.replace(/_b(?=\.)/, '_r')
     a.appendChild(img)
     el.appendChild(a)
+  }
+  for(let el of document.querySelectorAll('.PostIndex-content img.column-gif')) {
+    el.src = el.src.replace(/\.jpg$/, '.gif')
+    el.parentNode.classList.add('is-playing')
   }
 }
 
