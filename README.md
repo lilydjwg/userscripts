@@ -19,3 +19,16 @@ wikipedia-lang-reorder
 * Move Chinese and English languages to the front in the language list
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/wikipedia-lang-reorder.user.js)
+
+google_cache_redirect
+===
+* link for Google Search to bypass redirecting (for visiting or copying)
+* no unencrypted URL redirecting
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/google_cache_redirect.user.js)
+
+google_searchbar
+===
+* middle-click clear & paste on Google Searchbar (hold alt to not clear)
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/google_searchbar.user.js)
