@@ -32,3 +32,10 @@ google_searchbar
 * middle-click clear & paste on Google Searchbar (hold alt to not clear)
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/google_searchbar.user.js)
+
+disqus_login_reminder
+===
+* Remind you if you can't post your comments because you aren't logged in
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/disqus_login_reminder.user.js)
+
