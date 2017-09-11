@@ -33,6 +33,12 @@ google_searchbar
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/google_searchbar.user.js)
 
+googlegroups_remove_translation_tip
+===
+* Don't show the translate-to-Chinese tip. It's annoying.
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/googlegroups_remove_translation_tip.user.js)
+
 chito
 ===
 * show IP geolocations in Chito admin pages
