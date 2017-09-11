@@ -32,3 +32,11 @@ google_searchbar
 * middle-click clear & paste on Google Searchbar (hold alt to not clear)
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/google_searchbar.user.js)
+
+chito
+===
+* show IP geolocations in Chito admin pages
+
+This script requires a local HTTP service.
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/chito.user.js)
