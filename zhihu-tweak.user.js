@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎修正
 // @namespace    https://github.com/lilydjwg/tampermonkey-scripts
-// @version      0.4
+// @version      0.5
 // @description  中键后台标签页、评论区 Tab 到提交按钮、图片立即加载
 // @author       lilydjwg
 // @match        https://zhuanlan.zhihu.com/p/*
@@ -34,6 +34,25 @@ const func = function() {
   for(let el of document.querySelectorAll('.PostIndex-content img.column-gif')) {
     el.src = el.src.replace(/\.jpg$/, '.gif')
     el.parentNode.classList.add('is-playing')
+  }
+
+  for(let el of document.querySelectorAll('.PostIndex-content div.VagueImage-mask')) {
+    el.parentNode.removeChild(el)
+  }
+
+  // videos
+  for(let el of document.querySelectorAll('.PostIndex-content div.Video[data-za-module-info]')) {
+    const info = JSON.parse(el.dataset.zaModuleInfo).card.content
+    if(info.sub_type == 'SelfHosted') {
+      const vid = info.video_id
+      const vframe = document.createElement('iframe')
+      vframe.src = `https://www.zhihu.com/video/${vid}`
+      vframe.frameBorder = '0'
+      vframe.allowFullscreen = true
+
+      const player = el.querySelector('.VideoCard-player')
+      player.appendChild(vframe)
+    }
   }
 }
 
