@@ -9,8 +9,12 @@ github-tweak
 
 zhihu-tweak
 ===
-* 知乎专栏中，修复中键/Ctrl+左键点击在后台标签页中打开链接
-* 评论时，Tab 之后首先跳转到提交评论的按钮
+* 问答
+  * 评论时，Tab 之后首先跳转到提交评论的按钮
+* 文章
+  * 修复中键/Ctrl+左键点击在后台标签页中打开链接
+  * 图片、视频立即加载不等待，GIF 自动播放
+  * TODO: 刷新之后，浏览器无法恢复当前滚动位置
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/zhihu-tweak.user.js)
 
