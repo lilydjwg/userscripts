@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         知乎修正
-// @namespace    https://github.com/lilydjwg/tampermonkey-scripts
+// @namespace    https://github.com/lilydjwg/userscripts
 // @version      0.5
 // @description  中键后台标签页、评论区 Tab 到提交按钮、图片立即加载
 // @author       lilydjwg

@@ -3,7 +3,7 @@
 
 // ==UserScript==
 // @name           Google Search Redirect Changer Remover
-// @namespace      https://github.com/lilydjwg/tampermonkey-scripts
+// @namespace      https://github.com/lilydjwg/userscripts
 // @description    Change or remove the Google Search redirect in cached links
 // @include        https://www.google.com/*
 // @include        https://encrypted.google.*/*

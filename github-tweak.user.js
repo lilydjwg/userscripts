@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           github tweaks
-// @namespace      https://github.com/lilydjwg/tampermonkey-scripts
+// @namespace      https://github.com/lilydjwg/userscripts
 // @description    use gzip, use ssh
 // @include        https://github.com/*
 // @version	   1.8.1

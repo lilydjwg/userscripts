@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Wikipedia language reorder
 // @description	   Move Chinese and English languages to the front
-// @namespace      https://github.com/lilydjwg/tampermonkey-scripts
+// @namespace      https://github.com/lilydjwg/userscripts
 // @include        https://*.wikipedia.org/*
 // @include        https://*.wiktionary.org/*
 // @include        https://*.wikisource.org/*

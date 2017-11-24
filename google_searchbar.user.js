@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Google Searchbar
-// @namespace      https://github.com/lilydjwg/tampermonkey-scripts
+// @namespace      https://github.com/lilydjwg/userscripts
 // @description    middle click paste in Google Searchbar
 // @include        https://www.google.com/*
 // @include        https://encrypted.google.*/*
