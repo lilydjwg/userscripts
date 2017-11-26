@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Chito 后台评论地理位置显示
-// @namespace      https://github.com/lilydjwg/tampermonkey-scripts
+// @namespace      https://github.com/lilydjwg/userscripts
 // @description    通过 JSONP 查询 IP 地址对应的地理位置并显示
 // @include        http://*.is-programmer.com/admin*
 // @include        http://blog.lilydjwg.me/admin*

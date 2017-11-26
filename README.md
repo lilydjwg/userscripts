@@ -1,4 +1,4 @@
-My various Tampermonkey scripts
+My various Tampermonkey / GreaseMonkey scripts
 
 github-tweak
 ===
@@ -42,6 +42,12 @@ googlegroups_remove_translation_tip
 * Don't show the translate-to-Chinese tip. It's annoying.
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/googlegroups_remove_translation_tip.user.js)
+
+visited-links
+===
+* use purple (or other) color for visited links
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/visited-links.user.js)
 
 chito
 ===
