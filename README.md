@@ -49,6 +49,14 @@ visited-links
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/visited-links.user.js)
 
+Mastodon
+===
+Mastodon fixes
+
+* don't treat Esc as unfocusing the textarea because it may come when cancelling IME composition
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/mastodon.user.js)
+
 chito
 ===
 * show IP geolocations in Chito admin pages
