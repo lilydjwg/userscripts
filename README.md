@@ -64,3 +64,9 @@ chito
 This script requires a local HTTP service.
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/chito.user.js)
+
+汉典
+===
+* 生僻字使用文字显示
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/zdic.user.js)
