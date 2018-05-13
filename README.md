@@ -70,3 +70,9 @@ This script requires a local HTTP service.
 * 生僻字使用文字显示
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/zdic.user.js)
+
+aqistudy
+===
+* 修复主内容区域不能正确显示的问题
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/aqistudy.user.js)
