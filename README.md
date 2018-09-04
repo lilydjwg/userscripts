@@ -68,3 +68,9 @@ aqistudy
 * 修复主内容区域不能正确显示的问题
 
 [Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/aqistudy.user.js)
+
+mp.weixin
+===
+* 修正微信文章标题
+
+[Install](https://github.com/lilydjwg/tampermonkey-scripts/raw/master/mp.weixin.user.js)
