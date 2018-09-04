@@ -2,8 +2,8 @@
 // @name           weixin article fixes
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    weixin article fixes
-// @include        https://mp.weixin.qq.com/s?*
-// @version	   0.1
+// @include        https://mp.weixin.qq.com/s*
+// @version	   0.1.1
 // @run-at	   document-idle
 // @grant          none
 // ==/UserScript==
