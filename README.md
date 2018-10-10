@@ -43,6 +43,12 @@ readthedocs
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/readthedocs.user.js)
 
+telegram-web
+===
+* make the link in unsafe link popups a real link
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/telegram-web.user.js)
+
 googlegroups_remove_translation_tip
 ===
 * Don't show the translate-to-Chinese tip. It's annoying.
