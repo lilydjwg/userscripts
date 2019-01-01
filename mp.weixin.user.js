@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    weixin article fixes
 // @include        https://mp.weixin.qq.com/s*
-// @version	   0.1.3
+// @version	   0.2
 // @run-at	   document-idle
 // @grant          none
 // ==/UserScript==
@@ -11,20 +11,17 @@
 (function() {
 'use strict'
 
-let _title_updated = false
-
-const fix = function() {
-  if(_title_updated){
+const observer = new MutationObserver(function(_mutationList, _observer) {
+  const title = document.getElementById('activity-name').textContent.trim()
+  if(document.title.indexOf(title) == 0) {
     return
   }
-  const title = document.getElementById('activity-name').textContent.trim()
   document.title = `${title} - ${document.title}`
-  _title_updated = true
-}
+})
 
-setTimeout(fix, 1500)
-setTimeout(fix, 3000)
-setTimeout(fix, 5000)
+observer.observe(
+  document.querySelector('head > title'),
+  { subtree: true, characterData: true, childList: true })
 
 })()
 
