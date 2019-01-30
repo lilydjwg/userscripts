@@ -3,7 +3,8 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    ReadTheDocs tweak
 // @include        https://*.readthedocs.io/*
-// @version	   0.1
+// @include        https://docs.ansible.com/*
+// @version	   0.2
 // @run-at	   document-idle
 // @grant          none
 // ==/UserScript==
@@ -22,12 +23,22 @@ const may_hide = function(toggle) {
   }
   if(hide) {
     content.style.marginLeft = '0'
+    // Some sites set this to calc(100% - 300px), e.g.
+    // https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html
+    content.style.width = '100%'
     nav.style.display = 'none'
-    footer.style.display = 'none'
+    // Some sites don't have footer, e.g.
+    // https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html
+    if(footer) {
+      footer.style.display = 'none'
+    }
   } else {
     content.style.marginLeft = '300px'
+    content.style.width = ''
     nav.style.display = 'block'
-    footer.style.display = 'block'
+    if(footer) {
+      footer.style.display = 'block'
+    }
   }
 }
 
