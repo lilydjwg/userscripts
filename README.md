@@ -86,3 +86,9 @@ mp.weixin
 * 修正微信文章标题
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/mp.weixin.user.js)
+
+cks
+===
+* Make titles of Chris's Wiki better
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/cks.user.js)
