@@ -3,14 +3,17 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    Disable spellcheck on specific sites
 // @include        https://utcc.utoronto.ca/~cks/*
-// @version        0.1
+// @version        0.2
 // @grant          none
 // ==/UserScript==
 
 (function() {
 'use strict'
 
-const title = document.querySelector('h2').textContent
-document.title = `Chris's Wiki :: ${title}`
+const h2s = document.querySelectorAll('h2')
+if(h2s.length == 1) {
+  const title = h2s[0].textContent
+  document.title = `Chris's Wiki :: ${title}`
+}
 
 })()
