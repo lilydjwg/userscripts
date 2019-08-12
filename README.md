@@ -55,6 +55,12 @@ telegram-web
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/telegram-web.user.js)
 
+ipip-tweak
+===
+* DNS 查询页面清除输入框并聚集
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/ipip-tweak.user.js)
+
 googlegroups_remove_translation_tip
 ===
 * Don't show the translate-to-Chinese tip. It's annoying.
