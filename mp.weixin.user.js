@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    weixin article fixes
 // @include        https://mp.weixin.qq.com/s*
-// @version	   0.3
+// @version	   0.4
 // @run-at	   document-idle
 // @grant          none
 // ==/UserScript==
@@ -17,6 +17,11 @@ function doit() {
   document.title = `${title} - ${name}`
 }
 doit()
+setTimeout(doit, 100)
+setTimeout(doit, 500)
+setTimeout(doit, 1000)
+setTimeout(doit, 3000)
+setTimeout(doit, 5000)
 
 })()
 
