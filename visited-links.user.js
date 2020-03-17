@@ -2,9 +2,7 @@
 // @name          visited links
 // @namespace     https://github.com/lilydjwg/userscripts
 // @description	  Use default color for visited links
-// @version       1.1
-// @grant         GM_addStyle
-// @include       http://docs.python-requests.org/*
+// @version       2.0
 // @include       http://www.yaml.org/*
 // @include       https://pythonhosted.org/*
 // @include       http://www.freelists.org/*
@@ -12,8 +10,16 @@
 // @include       http://docs.wand-py.org/*
 // ==/UserScript==
 
-/* global GM_addStyle */
+const css = 'a:visited { color: #551a8b !important; }'
+addStyle(css)
 
-let css
-css = 'a:visited { color: #551a8b !important; }'
-GM_addStyle(css)
+function addStyle(css) {
+  const head = document.getElementsByTagName('head')[0]
+  if (head) {
+    const style = document.createElement('style')
+    style.setAttribute('type', 'text/css')
+    style.textContent = css
+    head.appendChild(style)
+    return style
+  }
+}
