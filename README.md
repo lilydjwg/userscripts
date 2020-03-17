@@ -104,3 +104,9 @@ cks
 * Make titles of Chris's Wiki better
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/cks.user.js)
+
+dictionary
+===
+Tweaks for dictionary.com.
+
+* show IPA on page load
