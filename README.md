@@ -110,3 +110,5 @@ dictionary
 Tweaks for dictionary.com.
 
 * show IPA on page load
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/dictionary.user.js)
