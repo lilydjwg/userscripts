@@ -5,7 +5,7 @@
 // @include        https://*.wikipedia.org/*
 // @include        https://*.wiktionary.org/*
 // @include        https://*.wikisource.org/*
-// @version	   1.0.1
+// @version	   1.1
 // @grant          none
 // ==/UserScript==
 
@@ -18,6 +18,11 @@ for(let i=0, len=links.snapshotLength; i<len; i++){
   let link = links.snapshotItem(i)
   ul = ul || link.parentNode.parentNode
   ul.insertBefore(link.parentNode, ul.firstChild)
+}
+
+const translate = document.querySelector('.cx-new-interlanguage-link')
+if(translate) {
+  translate.style.display = 'none'
 }
 
 })()
