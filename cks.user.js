@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name           Better title for Chris's Wiki
 // @namespace      https://github.com/lilydjwg/userscripts
-// @description    Disable spellcheck on specific sites
+// @description    Better title for Chris's Wiki
 // @include        https://utcc.utoronto.ca/~cks/*
-// @version        0.2
+// @version        0.2.1
 // @grant          none
 // ==/UserScript==
 
