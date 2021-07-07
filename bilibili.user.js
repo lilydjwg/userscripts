@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    Bilibili improvements
 // @include        https://www.bilibili.com/video/*
-// @version        0.1
+// @version        0.1.1
 // @grant          none
 // ==/UserScript==
 
@@ -46,7 +46,7 @@ if(annoying3) {
 
 }
 
-p = document.getElementById('bilibiliPlayer')
+const p = document.getElementById('bilibiliPlayer')
 p.addEventListener('dblclick', function(p) {
   document.querySelector('.bilibili-player-video-btn-fullscreen > button').click()
 })
