@@ -112,3 +112,13 @@ Tweaks for dictionary.com.
 * show IPA on page load
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/dictionary.user.js)
+
+Bilibili
+===
+B 站优化。
+
+* 禁用自动静音播放
+* 移除未登录的各种烦人提示
+* 双击视频播放器切换全屏
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/bilibili.user.js)
