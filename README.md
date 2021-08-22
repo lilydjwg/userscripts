@@ -7,12 +7,6 @@ github-tweak
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/github-tweak.user.js)
 
-docs.rs tweak
-===
-* add link to "newest" version (or permlink to latest version if already "newest")
-
-[Install](https://github.com/lilydjwg/userscripts/raw/master/docs-rs.user.js)
-
 zhihu-tweak
 ===
 * 问答
