@@ -116,3 +116,11 @@ B 站优化。
 * 双击视频播放器切换全屏
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/bilibili.user.js)
+
+Duolingo
+===
+Duolingo 优化
+
+* 中国大陆网民也要有朋友！
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/duolingo.user.js)
