@@ -21,6 +21,7 @@ zhihu-tweak
 wikipedia-lang-reorder
 ===
 * Move Chinese and English languages to the front in the language list
+* Hide Translate link
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/wikipedia-lang-reorder.user.js)
 

@@ -5,7 +5,7 @@
 // @include        https://*.wikipedia.org/*
 // @include        https://*.wiktionary.org/*
 // @include        https://*.wikisource.org/*
-// @version	   1.2
+// @version	   1.3
 // @grant          none
 // ==/UserScript==
 
@@ -20,4 +20,16 @@ for(let i=0, len=links.snapshotLength; i<len; i++){
   ul.insertBefore(link.parentNode, ul.firstChild)
 }
 
+function hideTranslate() {
+  const translate = document.querySelector('.cx-new-interlanguage-link')
+  if(translate) {
+    translate.style.display = 'none'
+  }
+}
+
+setTimeout(hideTranslate, 100)
+setTimeout(hideTranslate, 1000)
+setTimeout(hideTranslate, 3000)
+setTimeout(hideTranslate, 5000)
+           
 })()
