@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         知乎修正
 // @namespace    https://github.com/lilydjwg/userscripts
-// @version      0.5
-// @description  中键后台标签页、评论区 Tab 到提交按钮、图片立即加载
+// @version      0.6
+// @description  中键后台标签页、评论区 Tab 到提交按钮、图片立即加载、去除无意义链接
 // @author       lilydjwg
 // @match        https://zhuanlan.zhihu.com/p/*
 // @match        https://www.zhihu.com/*
@@ -73,5 +73,16 @@ const check_comment_actions = function(evt) {
 }
 
 document.body.addEventListener('click', check_comment_actions)
+
+const remove_meaningless_links = function() {
+  for(const node of document.querySelectorAll('span > a[data-za-not-track-link]')){
+    const text = node.textContent
+    const el = document.createElement('span')
+    el.textContent = text
+    node.parentNode.parentNode.replaceChild(el, node.parentNode)
+  }
+}
+
+setTimeout(remove_meaningless_links, 1000)
 
 })()
