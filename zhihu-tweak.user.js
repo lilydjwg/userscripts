@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         知乎修正
 // @namespace    https://github.com/lilydjwg/userscripts
-// @version      0.6
+// @version      0.7
 // @description  中键后台标签页、评论区 Tab 到提交按钮、图片立即加载、去除无意义链接
 // @author       lilydjwg
 // @match        https://zhuanlan.zhihu.com/p/*
@@ -9,9 +9,6 @@
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
-
-(function() {
-'use strict'
 
 const func = function() {
   const content_node = document.querySelector('.PostIndex-content')
@@ -83,6 +80,27 @@ const remove_meaningless_links = function() {
   }
 }
 
-setTimeout(remove_meaningless_links, 1000)
+setInterval(remove_meaningless_links, 1000)
 
-})()
+// mobile site
+const continue_in_browser_on_load = function() {
+  let ell = document.querySelectorAll('.ModalWrap-itemBtn')
+  if(ell.length == 2) {
+    ell[1].click()
+  }
+}
+setTimeout(continue_in_browser_on_load, 500)
+
+const continue_in_browser = function() {
+  let el = document.querySelector('.SkipModal .Button--plain')
+  if(el) {
+    el.click()
+  }
+}
+
+document.addEventListener('click', function(e) {
+  if(e.target.classList.contains('ContentItem-expandButton')) {
+    setTimeout(continue_in_browser, 100)
+  }
+})
+
