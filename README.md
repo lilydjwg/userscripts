@@ -7,6 +7,13 @@ github-tweak
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/github-tweak.user.js)
 
+docsrs
+===
+* use `/latest/` version links for search results
+* show visited search results in a different color
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/docsrs.user.js)
+
 zhihu-tweak
 ===
 * 问答
