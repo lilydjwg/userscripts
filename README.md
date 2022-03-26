@@ -14,6 +14,15 @@ docsrs
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/docsrs.user.js)
 
+element
+===
+
+For the Element Web Matrix client.
+
+* mark Telegram bridge users with a small icon at the corner of avatar
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/element.user.js)
+
 zhihu-tweak
 ===
 * 问答
