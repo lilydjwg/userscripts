@@ -3,13 +3,19 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    Docs.rs tweak
 // @include        https://docs.rs/*
-// @version	   0.1
-// @run-at	   document-idle
+// @version	   0.2
+// @run-at	   document-end
 // @grant          none
 // ==/UserScript==
 
-const css = 'a:visited .name { color: #324d73 !important; }'
-addStyle(css)
+
+for(const link of document.querySelectorAll('.recent-releases-container > ul > li > a.release')) {
+  if(link.href.indexOf('https://docs.rs/crate/') === 0) {
+    continue
+  }
+  link.href = link.href.replace(/^(https:\/\/docs.rs\/[^/]+\/)[^/]+/, '$1latest')
+}
+
 
 function addStyle(css) {
   const head = document.getElementsByTagName('head')[0]
@@ -22,7 +28,7 @@ function addStyle(css) {
   }
 }
 
-for(const link of document.querySelectorAll('.recent-releases-container > ul > li > a.release') {
-  link.href = link.href.replace(/^(\/[^/]+\/)[^/]+/, '$1latest')
-}
+const css = 'a:visited .name { color: #964dae !important; }'
+
+addStyle(css)
 
