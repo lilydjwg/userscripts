@@ -38,6 +38,7 @@ wikipedia-lang-reorder
 ===
 * Move Chinese and English languages to the front in the language list
 * Hide Translate link
+* For Vector 2022 theme, copy the language list back to bottom of left column
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/wikipedia-lang-reorder.user.js)
 
