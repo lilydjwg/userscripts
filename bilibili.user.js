@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    Bilibili improvements
 // @include        https://www.bilibili.com/video/*
-// @version        0.1.2
+// @version        0.1.3
 // @grant          none
 // ==/UserScript==
 
@@ -16,7 +16,7 @@ if(localStorage.recommend_auto_play == 'open') {
 
 const settings = JSON.parse(localStorage.bpx_player_profile)
 if(settings.media.autoplay) {
-  settings.video_status.autoplay = false
+  settings.media.autoplay = false
   localStorage.bpx_player_profile = JSON.stringify(settings)
 }
 
