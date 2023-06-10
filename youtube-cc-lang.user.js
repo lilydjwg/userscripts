@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
 // @include        https://www.youtube.com/watch?*
-// @version	   0.2
+// @version	   0.3
 // @grant          none
 // ==/UserScript==
 
@@ -32,14 +32,17 @@ function run(el) {
   ob.observe(el, { childList: true })
 }
 
+let btn_clicked = false
+
 function start() {
   const button = document.querySelector('.ytp-popup.ytp-settings-menu')
   if(!button) {
     setTimeout(start, 1000)
   }
   const el = document.querySelector('.ytp-popup.ytp-settings-menu .ytp-menuitem:nth-child(3) .ytp-menuitem-content')
-  if(!el) {
+  if(!el && !btn_clicked) {
     document.querySelector('.ytp-settings-button').click()
+    btn_clicked = true
     setTimeout(start, 100)
   } else {
     document.querySelector('.ytp-settings-button').click()
