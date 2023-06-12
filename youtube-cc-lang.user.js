@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
 // @include        https://www.youtube.com/watch?*
-// @version	   0.3
+// @version	   0.3.1
 // @grant          none
 // ==/UserScript==
 
@@ -39,7 +39,7 @@ function start() {
   if(!button) {
     setTimeout(start, 1000)
   }
-  const el = document.querySelector('.ytp-popup.ytp-settings-menu .ytp-menuitem:nth-child(3) .ytp-menuitem-content')
+  const el = document.querySelector('.ytp-popup.ytp-settings-menu .ytp-menuitem:nth-child(2) .ytp-menuitem-content')
   if(!el && !btn_clicked) {
     document.querySelector('.ytp-settings-button').click()
     btn_clicked = true
