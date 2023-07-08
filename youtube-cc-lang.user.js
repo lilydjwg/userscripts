@@ -2,7 +2,7 @@
 // @name           YouTube subtitles lang attribute
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
-// @include        https://www.youtube.com/watch?*
+// @match          https://www.youtube.com/watch?*
 // @version	   0.3.2
 // @grant          none
 // ==/UserScript==
