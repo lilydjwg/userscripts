@@ -2,10 +2,10 @@
 // @name           Wikipedia language reorder
 // @description	   Move Chinese and English languages to the front
 // @namespace      https://github.com/lilydjwg/userscripts
-// @include        https://*.wikipedia.org/*
-// @include        https://*.wiktionary.org/*
-// @include        https://*.wikisource.org/*
-// @version	   1.5
+// @match          https://*.wikipedia.org/*
+// @match          https://*.wiktionary.org/*
+// @match          https://*.wikisource.org/*
+// @version	       1.6
 // @grant          none
 // ==/UserScript==
 
@@ -45,7 +45,7 @@ function addStyle(css) {
 }
 
 // Vector (2022)
-const link_div = document.querySelector('#p-lang-btn > .vector-menu-content > .vector-menu-content')
+const link_div = document.querySelector('#p-lang-btn > .vector-dropdown-content > .vector-menu-content')
 if(link_div) {
   const link_div2 = link_div.cloneNode(true)
   link_div2.querySelector('.after-portlet-lang').remove()
@@ -67,3 +67,4 @@ if(link_div) {
 }
 
 })()
+
