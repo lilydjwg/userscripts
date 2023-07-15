@@ -3,12 +3,14 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
 // @match          https://www.youtube.com/watch?*
-// @version	   0.3.2
+// @version	   0.3.3
 // @grant          none
 // ==/UserScript==
 
 (function() {
 'use strict'
+
+const ZH_TW_CHANNELS = ['PanSci 泛科学']
 
 function run(el) {
   const ob = new MutationObserver((mutationList, observer) => {
@@ -23,7 +25,13 @@ function run(el) {
       }else if(name.includes('韩语')) {
         cc.lang = 'ko'
       }else{
-        cc.removeAttribute('lang')
+        const channel = document.getElementById('text-container').textContent.trim()
+        console.log('ytcc: channel', channel)
+        if(ZH_TW_CHANNELS.includes(channel)) {
+          cc.lang = 'zh-TW'
+        }else{
+          cc.removeAttribute('lang')
+        }
       }
     })
   })
