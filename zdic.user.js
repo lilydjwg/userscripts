@@ -2,14 +2,14 @@
 // @name           汉典修正
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    汉典字体调整
-// @include        http://www.zdic.net/*
-// @version	   0.2
+// @match          https://www.zdic.net/*
+// @version	   0.2.1
 // @grant          none
 // ==/UserScript==
 
 // 「生僻字转文字」
 setTimeout(function(){
-  const hanzi2char = document.getElementById('kxtw')
+  const hanzi2char = document.getElementById('twbon')
   if(hanzi2char){
     const evt = document.createEvent("MouseEvents")
     evt.initMouseEvent("click", true, true, window,
@@ -17,3 +17,4 @@ setTimeout(function(){
     hanzi2char.dispatchEvent(evt)
   }
 }, 1500)
+
