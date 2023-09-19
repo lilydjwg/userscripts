@@ -7,6 +7,12 @@ github-tweak
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/github-tweak.user.js)
 
+gitlab-tweak
+===
+* move notification button / status out to sidebar
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/gitlab-tweak.user.js)
+
 docsrs
 ===
 * use `/latest/` version links for search results
