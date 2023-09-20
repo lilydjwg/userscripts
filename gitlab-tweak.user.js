@@ -6,17 +6,18 @@
 // @match          https://gitlab.com/*/merge_requests/*
 // @match          https://gitlab.archlinux.org/*/issues/*
 // @match          https://gitlab.archlinux.org/*/merge_requests/*
-// @version	   0.1.1
+// @version	   0.2
 // @grant          none
 // ==/UserScript==
 
 (function() {
 'use strict'
 
-let notif
+let notif, issueref
 const is_issue = location.pathname.includes('/-/issues/')
 if(is_issue) {
   notif = document.querySelector('li[data-testid="notification-toggle"]')
+  issueref = document.querySelector('button[data-testid="copy-reference"]')
 } else {
   notif = document.querySelector('li[data-testid="notification-toggle"]').parentNode
 }
@@ -27,6 +28,8 @@ if(notif) {
     notif.style.listStyleType = 'none'
     notif.querySelector('form > div').style.paddingLeft = '0'
     notif.querySelector('button').style.marginLeft = '0'
+    sidebar.insertBefore(issueref, sidebar.firstChild)
+    issueref.style.paddingLeft = '0'
   }
 }
 
