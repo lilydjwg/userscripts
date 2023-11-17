@@ -4,7 +4,8 @@
 // @description    Element.io tweak
 // @match          https://chat.mozilla.org/*
 // @match          https://app.element.io/*
-// @version        0.1.1
+// @match          https://element.catgirl.cloud/*
+// @version        0.1.2
 // @run-at         document-idle
 // @grant          none
 // @sandbox        JavaScript
