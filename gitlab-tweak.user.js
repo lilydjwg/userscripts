@@ -6,7 +6,11 @@
 // @match          https://gitlab.com/*/merge_requests/*
 // @match          https://gitlab.archlinux.org/*/issues/*
 // @match          https://gitlab.archlinux.org/*/merge_requests/*
-// @version	   0.2
+// @match          https://gitlab.gnome.org/*/issues/*
+// @match          https://gitlab.gnome.org/*/merge_requests/*
+// @match          https://gitlab.freedesktop.org/*/issues/*
+// @match          https://gitlab.freedesktop.org/*/merge_requests/*
+// @version	   0.2.2
 // @grant          none
 // ==/UserScript==
 
