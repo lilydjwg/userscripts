@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
 // @match          https://www.youtube.com/watch?*
-// @version	   0.3.5
+// @version	   0.3.6
 // @grant          window.onurlchange
 // ==/UserScript==
 
@@ -14,7 +14,7 @@ const ZH_TW_CHANNELS = ['PanSci 泛科学']
 
 let observer
 
-function run(el) {
+const run = function(el) {
   if(observer) {
     observer.disconnect()
   }
@@ -22,6 +22,9 @@ function run(el) {
     mutationList.forEach((mutation) => {
       const name = mutation.target.textContent
       const cc = document.getElementById('ytp-caption-window-container')
+      if(!cc) {
+        return;
+      }
       console.log('ytcc: 字幕', mutation.target.textContent)
       if(name.includes('台湾') || name.includes('繁体')) {
         cc.lang = 'zh-TW'
@@ -47,7 +50,7 @@ function run(el) {
 
 let btn_clicked = false
 
-function start() {
+const start = function() {
   const button = document.querySelector('.ytp-popup.ytp-settings-menu')
   if(!button) {
     setTimeout(start, 1000)

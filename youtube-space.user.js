@@ -3,19 +3,21 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    Use space key to pause / play video
 // @match          https://www.youtube.com/watch?*
-// @version	   0.2
+// @version	   0.2.1
 // @grant          none
 // ==/UserScript==
 
 (function() {
 'use strict'
 
-function run() {
-  const v = document.querySelector('video')
+const run = function() {
+  const v = document.querySelector('video.video-stream.html5-main-video')
   if(!v) {
     setTimeout(run, 500)
     return
   }
+
+  console.log('video element', v)
 
   let last_pause = 0
   let last_play = 0
