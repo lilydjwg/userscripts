@@ -2,24 +2,37 @@
 // @name           github tweaks
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    use gzip, use ssh
-// @include        https://github.com/*
-// @version	   1.9
-// @grant          none
+// @match          https://github.com/*
+// @version	   1.10
+// @grant          GM_addElement
 // ==/UserScript==
- 
+
 (function() {
 'use strict'
 
 function prefer_gzip() {
-  const dl = document.querySelector('a[data-ga-click*="download zip"]')
+  console.log('tweak: prefer_gzip starts')
+
+  const dl = document.evaluate('//span[text()="Download ZIP"]', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0)
+  console.log('tweak: dl', dl)
   if(dl){
-    dl.dataset.gaClick = dl.dataset.gaClick.replace('zip', 'gzip')
-    dl.href = dl.href.replace(/\.zip$/, '.tar.gz')
-    dl.textContent = dl.textContent.replace('ZIP', 'GZIP')
+    const re = /^https:\/\/github\.com\/([^\/]+)\/([^\/]+)(\/tree\/([^\/]+))?/
+    const m = re.exec(location.href)
+    const button_ref = document.querySelector('button#branch-picker-repos-header-ref-selector').textContent.trim()
+    const ref = m[4] || button_ref
+    dl.textContent = ''
+    GM_addElement(dl, 'a', {
+      href: `/${m[1]}/${m[2]}/archive/${ref}.tar.gz`,
+      textContent: 'Download tar.gz',
+    })
+    console.log('tweak: download link added')
   }
 }
 
-prefer_gzip()
+console.log('tweak: start')
+document.addEventListener('click', function() {
+  setTimeout(prefer_gzip, 100)
+})
 
 const repourl = document.querySelectorAll('.js-live-clone-url')
 const re = /https:\/\/github\.com\/([^\/]+)\/(.*)/
@@ -32,13 +45,5 @@ for(i=0, len=repourl.length; i<len; i++){
     span.textContent = 'git@github.com:'+m[1]+'/'+m[2]
   }
 }
-
-document.addEventListener('click', function(e) {
-  if(e.target.tagName == 'SUMMARY' || (
-    e.target.tagName == 'SPAN' && e.target.classList.contains('dropdown-caret')
-  )) {
-    prefer_gzip()
-  }
-})
 
 })()
