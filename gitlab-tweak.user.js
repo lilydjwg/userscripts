@@ -10,7 +10,7 @@
 // @match          https://gitlab.gnome.org/*/merge_requests/*
 // @match          https://gitlab.freedesktop.org/*/issues/*
 // @match          https://gitlab.freedesktop.org/*/merge_requests/*
-// @version	   0.2.2
+// @version	   0.2.3
 // @grant          none
 // ==/UserScript==
 
@@ -30,8 +30,9 @@ if(notif) {
   sidebar.insertBefore(notif, sidebar.firstChild)
   if(is_issue) {
     notif.style.listStyleType = 'none'
-    notif.querySelector('form > div').style.paddingLeft = '0'
-    notif.querySelector('button').style.marginLeft = '0'
+    notif.style.paddingLeft = '0'
+    notif.style.width = '250px'
+    notif.querySelector('button').style.paddingLeft = '0'
     sidebar.insertBefore(issueref, sidebar.firstChild)
     issueref.style.paddingLeft = '0'
   }
