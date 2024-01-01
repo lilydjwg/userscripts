@@ -10,31 +10,36 @@
 // @match          https://gitlab.gnome.org/*/merge_requests/*
 // @match          https://gitlab.freedesktop.org/*/issues/*
 // @match          https://gitlab.freedesktop.org/*/merge_requests/*
-// @version	   0.2.3
+// @version	   0.2.4
 // @grant          none
 // ==/UserScript==
 
 (function() {
 'use strict'
 
+const add_item = function(el, sidebar) {
+  el.style.listStyleType = 'none'
+  el.style.paddingLeft = '0'
+  el.style.width = '250px'
+  el.querySelector('button').style.paddingLeft = '0'
+  sidebar.insertBefore(el, sidebar.firstChild)
+}
+
 let notif, issueref
 const is_issue = location.pathname.includes('/-/issues/')
 if(is_issue) {
   notif = document.querySelector('li[data-testid="notification-toggle"]')
-  issueref = document.querySelector('button[data-testid="copy-reference"]')
+  issueref = document.querySelector('li[data-testid="copy-reference"]')
 } else {
   notif = document.querySelector('li[data-testid="notification-toggle"]').parentNode
 }
 if(notif) {
   const sidebar = document.querySelector('aside > div.issuable-sidebar')
-  sidebar.insertBefore(notif, sidebar.firstChild)
   if(is_issue) {
-    notif.style.listStyleType = 'none'
-    notif.style.paddingLeft = '0'
-    notif.style.width = '250px'
-    notif.querySelector('button').style.paddingLeft = '0'
-    sidebar.insertBefore(issueref, sidebar.firstChild)
-    issueref.style.paddingLeft = '0'
+    add_item(notif, sidebar)
+    add_item(issueref, sidebar)
+  }else{
+    sidebar.insertBefore(notif, sidebar.firstChild)
   }
 }
 
