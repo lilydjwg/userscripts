@@ -11,27 +11,30 @@
 'use strict'
 
 const run = function() {
+  console.log('ytspace: start')
   if(location.href.indexOf('https://www.youtube.com/watch?') != 0) {
+    console.log('ytspace: not watch, returning')
     return;
   }
 
   const v = document.querySelector('video.video-stream.html5-main-video')
   if(!v) {
+    console.log('ytspace: no video, retry after 500ms')
     setTimeout(run, 500)
     return
   }
 
-  console.log('video element', v)
+  console.log('ytspace: video element', v)
 
   let last_pause = 0
   let last_play = 0
 
   v.addEventListener('pause', (e) => {
-    console.log('paused')
+    console.log('ytspace: paused')
     last_pause = e.timeStamp
   })
   v.addEventListener('play', (e) => {
-    console.log('played')
+    console.log('ytspace: played')
     last_play = e.timeStamp
   })
 
@@ -52,10 +55,10 @@ const run = function() {
       // console.log('setTimeout')
       setTimeout(function() { // run after YT's own
         if (v.paused && Math.abs(e.timeStamp - last_pause) > 200) {
-          console.log('play')
+          console.log('ytspace: play')
           v.play()
         } else if (Math.abs(e.timeStamp - last_play) > 200) {
-          console.log('pause')
+          console.log('ytspace: pause')
           v.pause()
         }
       }, 100)
