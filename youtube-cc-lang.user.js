@@ -2,15 +2,15 @@
 // @name           YouTube subtitles lang attribute
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
-// @match          https://www.youtube.com/watch?*
-// @version	   0.3.6
+// @match          https://www.youtube.com/*
+// @version	   0.4
 // @grant          window.onurlchange
 // ==/UserScript==
 
 (function() {
 'use strict'
 
-const ZH_TW_CHANNELS = ['PanSci 泛科学']
+const ZH_TW_CHANNELS = ['PanSci 泛科学', '舞秋風']
 
 let observer
 
@@ -49,39 +49,55 @@ const run = function(el) {
 }
 
 let btn_clicked = false
+let retry_times = 3
 
 const start = function() {
+  console.log('ytcc: start')
+  if(location.href.indexOf('https://www.youtube.com/watch?') != 0) {
+    console.log('ytcc: not watching, returning')
+    return;
+  }
   const button = document.querySelector('.ytp-popup.ytp-settings-menu')
   if(!button) {
+    console.log('ytcc: no button, retry after 1000')
     setTimeout(start, 1000)
   }
   // const el = document.querySelector('.ytp-popup.ytp-settings-menu .ytp-menuitem:nth-child(2) .ytp-menuitem-content')
 
   const r = document.evaluate('//div[@class="ytp-popup ytp-settings-menu"]//span[text()="字幕"]/parent::div/parent::div/parent::div/div[@class="ytp-menuitem-content"]', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null)
-  if(r.snapshotLength == 0 && !btn_clicked) {
-    const settings_btn = document.querySelector('.ytp-settings-button')
-    if(settings_btn) {
-      settings_btn.click()
-      btn_clicked = true
+  if(r.snapshotLength == 0) {
+    if(!btn_clicked) {
+      const settings_btn = document.querySelector('.ytp-settings-button')
+      if(settings_btn) {
+        settings_btn.click()
+        btn_clicked = true
+      }
     }
-    setTimeout(start, 100)
+    if(retry_times > 0) {
+      console.log('ytcc: no subtitles button, retry after 500')
+      retry_times -= 1
+      setTimeout(start, 500)
+    } else {
+      console.log('ytcc: no subtitles, giving up.')
+    }
   } else {
     document.querySelector('.ytp-settings-button').click()
-    if(r.snapshotLength > 0) { // 否则没有字幕？
-      run(r.snapshotItem(0))
-    }
+    run(r.snapshotItem(0))
   }
 }
 
-console.log('ytcc: start')
 start()
 
 // https://www.tampermonkey.net/documentation.php#api:window.onurlchange
 if(window.onurlchange === null) {
   // feature is supported
   window.addEventListener('urlchange', (info) => {
-    console.log('ytcc: restart on urlchange')
-    start()
+    console.log('ytcc: restart on urlchange', info)
+    if(info.url.indexOf('https://www.youtube.com/watch?') == 0) {
+      btn_clicked = false
+      retry_times = 3
+      start()
+    }
   })
 }
 

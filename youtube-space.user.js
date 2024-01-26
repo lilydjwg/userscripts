@@ -2,15 +2,19 @@
 // @name           YouTube space to pause / play
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    Use space key to pause / play video
-// @match          https://www.youtube.com/watch?*
-// @version	   0.2.1
-// @grant          none
+// @match          https://www.youtube.com/*
+// @version	   0.3
+// @grant          window.onurlchange
 // ==/UserScript==
 
 (function() {
 'use strict'
 
 const run = function() {
+  if(location.href.indexOf('https://www.youtube.com/watch?') != 0) {
+    return;
+  }
+
   const v = document.querySelector('video.video-stream.html5-main-video')
   if(!v) {
     setTimeout(run, 500)
@@ -63,6 +67,13 @@ const run = function() {
 }
 
 run()
+
+if(window.onurlchange === null) {
+  // feature is supported
+  window.addEventListener('urlchange', (info) => {
+    run()
+  })
+}
 
 })()
 
