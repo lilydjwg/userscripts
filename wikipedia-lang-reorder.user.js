@@ -5,8 +5,8 @@
 // @match          https://*.wikipedia.org/*
 // @match          https://*.wiktionary.org/*
 // @match          https://*.wikisource.org/*
-// @version	   2.1
-// @grant          none
+// @version	   2.2
+// @grant          GM_addStyle
 // ==/UserScript==
 
 (function() {
@@ -23,11 +23,10 @@ function may_add_it(bar, node) {
     const new_link = node.cloneNode(true)
     new_link.className = 'mw-list-item vector-tab-noicon'
     bar.insertBefore(new_link, bar.childNodes[2])
-    const diff = bar.childNodes[1].getBoundingClientRect().height - new_link.getBoundingClientRect().height
-    // fix different heights
-    new_link.childNodes[0].style.top = `${diff / 2}px`
   }
 }
+
+GM_addStyle('.vector-tab-noicon.mw-list-item { line-height: 1.2; }')
 
 })()
 
