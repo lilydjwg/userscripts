@@ -3,14 +3,14 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
 // @match          https://www.youtube.com/*
-// @version	   0.4
+// @version	   0.4.1
 // @grant          window.onurlchange
 // ==/UserScript==
 
 (function() {
 'use strict'
 
-const ZH_TW_CHANNELS = ['PanSci 泛科学', '舞秋風']
+const ZH_TW_CHANNELS = ['PanSci 泛科学', '舞秋風', '歷史衛視 History Channel']
 
 let observer
 
