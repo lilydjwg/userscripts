@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arch Packages time
 // @namespace    https://github.com/lilydjwg/userscripts
-// @version      0.1.1
+// @version      0.1.2
 // @description  use local time format for package dates
 // @match        https://archlinux.org/packages/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.12/dayjs.min.js
@@ -13,7 +13,7 @@
 'use strict'
 
 const formatter = new Intl.DateTimeFormat(undefined, {
-  timeStyle: "long",
+  timeStyle: "short",
   dateStyle: "long",
   hour12: false,
 })
