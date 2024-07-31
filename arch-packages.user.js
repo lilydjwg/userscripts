@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arch Packages time
 // @namespace    https://github.com/lilydjwg/userscripts
-// @version      0.1.2
+// @version      0.2
 // @description  use local time format for package dates
 // @match        https://archlinux.org/packages/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.12/dayjs.min.js
@@ -11,13 +11,6 @@
 // ==/UserScript==
 
 'use strict'
-
-const formatter = new Intl.DateTimeFormat(undefined, {
-  timeStyle: "short",
-  dateStyle: "long",
-  hour12: false,
-})
-const format_dt = formatter.format
 
 function format_relative_time(d1, d2) {
   // in miliseconds
@@ -52,7 +45,7 @@ const NOW = new Date()
 function parse_date(t) {
   t = t.replace(/([ap])\.m\./, '$1m')
   t = t.replace('UTC', '+0000')
-  return dayjs(t, parse_format, 'en').toDate()
+  return dayjs(t, parse_format, 'en')
 }
 
 {
@@ -60,8 +53,8 @@ function parse_date(t) {
   for(let i=0, len=nodes.snapshotLength; i<len; i++) {
     const el = nodes.snapshotItem(i)
     const d = parse_date(el.textContent)
-    el.textContent = format_dt(d)
-    el.title = format_relative_time(d, NOW)
+    el.textContent = d.format('YYYY-MM-DD HH:mm ZZ')
+    el.title = format_relative_time(d.toDate(), NOW)
   }
 }
 
@@ -73,8 +66,8 @@ function parse_date(t) {
   for(let i=0, len=nodes2.snapshotLength; i<len; i++) {
     const el = nodes2.snapshotItem(i)
     if(el.textContent !== '') {
-      const d = dayjs(el.textContent, 'MMMM D, YYYY', 'en').toDate()
-      el.textContent = formatter2.format(d)
+      const d = dayjs(el.textContent, 'MMMM D, YYYY', 'en')
+      el.textContent = d.format('YYYY-MM-DD')
     }
   }
 }
