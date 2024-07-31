@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arch Packages time
 // @namespace    https://github.com/lilydjwg/userscripts
-// @version      0.1
+// @version      0.1.1
 // @description  use local time format for package dates
 // @match        https://archlinux.org/packages/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.12/dayjs.min.js
@@ -69,12 +69,12 @@ function parse_date(t) {
   const formatter2 = new Intl.DateTimeFormat(undefined, {
     dateStyle: "long",
   })
-  const nodes2 = document.evaluate('//div[@id="pkglist-results"]//tr/td[6]', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null)
+  const nodes2 = document.evaluate('//div[@id="pkglist-results"]//tr/td[position()=6 or position()=7]', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null)
   for(let i=0, len=nodes2.snapshotLength; i<len; i++) {
     const el = nodes2.snapshotItem(i)
-    console.log(el)
-    const d = dayjs(el.textContent, 'MMMM D, YYYY', 'en').toDate()
-    console.log(d)
-    el.textContent = formatter2.format(d)
+    if(el.textContent !== '') {
+      const d = dayjs(el.textContent, 'MMMM D, YYYY', 'en').toDate()
+      el.textContent = formatter2.format(d)
+    }
   }
 }
