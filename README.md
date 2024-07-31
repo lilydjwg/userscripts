@@ -29,6 +29,13 @@ For the Element Web Matrix client.
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/element.user.js)
 
+Arch Packages time
+===
+
+Use local time format for package dates.
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/arch-packages.user.js)
+
 zhihu-tweak
 ===
 * 问答
