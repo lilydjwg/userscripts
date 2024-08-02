@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arch Packages time
 // @namespace    https://github.com/lilydjwg/userscripts
-// @version      0.2
+// @version      0.3
 // @description  use local time format for package dates
 // @match        https://archlinux.org/packages/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.12/dayjs.min.js
@@ -45,6 +45,8 @@ const NOW = new Date()
 function parse_date(t) {
   t = t.replace(/([ap])\.m\./, '$1m')
   t = t.replace('UTC', '+0000')
+  // e.g. Dec. 22, 2023, 11 p.m. UTC
+  t = t.replace(/( [0-9]+) ([ap]m)/, '$1:00 $2')
   return dayjs(t, parse_format, 'en')
 }
 
@@ -62,7 +64,7 @@ function parse_date(t) {
   const formatter2 = new Intl.DateTimeFormat(undefined, {
     dateStyle: "long",
   })
-  const nodes2 = document.evaluate('//div[@id="pkglist-results"]//tr/td[position()=6 or position()=7]', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null)
+  const nodes2 = document.evaluate('//div[@id="pkglist-results" or @id="exact-matches"]//tr/td[position()=6 or position()=7]', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null)
   for(let i=0, len=nodes2.snapshotLength; i<len; i++) {
     const el = nodes2.snapshotItem(i)
     if(el.textContent !== '') {
