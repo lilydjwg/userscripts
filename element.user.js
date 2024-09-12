@@ -6,7 +6,7 @@
 // @match          https://app.element.io/*
 // @match          https://element.catgirl.cloud/*
 // @match          https://app.schildi.chat/*
-// @version        0.1.3
+// @version        0.1.4
 // @run-at         document-idle
 // @grant          none
 // @sandbox        JavaScript
@@ -50,7 +50,7 @@ function insertAfter(location, newnode) {
 }
 
 function doit() {
-  for(let avatar of document.querySelectorAll('ol.mx_RoomView_MessageList [title^="@telegram_"][title$=":t2bot.io"], ol.mx_RoomView_MessageList [title^="@telegram_"][title$=":nichi.co"], ol.mx_RoomView_MessageList [title^="@telegram_"][title$=":moe.cat"], ol.mx_RoomView_MessageList [title^="@perigram_"][title$=":neo.angry.im"]')) {
+  for(let avatar of document.querySelectorAll('ol.mx_RoomView_MessageList [title^="@telegram_"][title$=":t2bot.io"], ol.mx_RoomView_MessageList [title^="@telegram_"][title$=":nichi.co"], ol.mx_RoomView_MessageList [title^="@telegram_"][title$=":moe.cat"], ol.mx_RoomView_MessageList [title^="@perigram_"][title$=":neo.angry.im"], ol.mx_RoomView_MessageList [title^="@tg_"][title$=":moechat.kimiblock.top"]')) {
     const width = avatar.width
     if(avatar.parentNode.tagName == 'SPAN' && avatar.parentNode.classList.contains('mx_Pill')) { // in reply to
       if(avatar.nextSibling.nodeType == Node.TEXT_NODE) {
