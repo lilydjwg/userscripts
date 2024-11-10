@@ -140,6 +140,14 @@ B 站优化。
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/bilibili.user.js)
 
+Taobao
+===
+淘宝优化。
+
+* 禁用 <kbd>Alt+数字</kbd>快捷键（与 Linux 下浏览器切换标签页冲突）
+
+[Install](https://github.com/lilydjwg/userscripts/raw/master/taobao.user.js)
+
 Duolingo
 ===
 Duolingo 优化
