@@ -10,7 +10,7 @@
 // @match          https://gitlab.gnome.org/*/merge_requests/*
 // @match          https://gitlab.freedesktop.org/*/issues/*
 // @match          https://gitlab.freedesktop.org/*/merge_requests/*
-// @version	   0.2.5
+// @version	   0.2.6
 // @grant          none
 // ==/UserScript==
 
@@ -29,13 +29,16 @@ const main = function() {
   let notif, issueref
   const is_issue = location.pathname.includes('/-/issues/')
   if(is_issue) {
-    notif = document.querySelector('li[data-testid="notification-toggle"]')
-    issueref = document.querySelector('li[data-testid="copy-reference"]')
+    notif = document.querySelector('li[data-testid="notifications-toggle-form"]')
+    issueref = document.querySelector('li[data-testid="copy-reference-action"]')
   } else {
-    notif = document.querySelector('li[data-testid="notification-toggle"]').parentNode
+    notif = document.querySelector('li[data-testid="notification-toggle"]')
+    if(notif) {
+      notif = notif.parentNode
+    }
   }
+  const sidebar = document.querySelector('aside > div')
   if(notif) {
-    const sidebar = document.querySelector('aside > div.issuable-sidebar')
     if(is_issue) {
       add_item(notif, sidebar)
       add_item(issueref, sidebar)
