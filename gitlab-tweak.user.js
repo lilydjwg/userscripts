@@ -10,7 +10,7 @@
 // @match          https://gitlab.gnome.org/*/merge_requests/*
 // @match          https://gitlab.freedesktop.org/*/issues/*
 // @match          https://gitlab.freedesktop.org/*/merge_requests/*
-// @version	   0.2.6
+// @version	   0.2.7
 // @grant          none
 // ==/UserScript==
 
@@ -37,7 +37,9 @@ const main = function() {
       notif = notif.parentNode
     }
   }
-  const sidebar = document.querySelector('aside > div')
+  let sidebar = document.querySelector('section.work-item-overview-right-sidebar > .work-item-sidebar-container')
+  if(!sidebar)
+   sidebar = document.querySelector('aside > div')
   if(notif) {
     if(is_issue) {
       add_item(notif, sidebar)
