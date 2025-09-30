@@ -3,7 +3,7 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    set YouTube subtitles lang attribute
 // @match          https://www.youtube.com/*
-// @version	   0.4.1
+// @version	   0.4.2
 // @grant          window.onurlchange
 // ==/UserScript==
 
@@ -33,7 +33,7 @@ const run = function(el) {
       }else if(name.includes('韩语')) {
         cc.lang = 'ko'
       }else{
-        const channel = document.getElementById('text-container').textContent.trim()
+        const channel = document.querySelector('ytd-watch-flexy #text-container').textContent.trim()
         console.log('ytcc: channel', channel)
         if(ZH_TW_CHANNELS.includes(channel)) {
           cc.lang = 'zh-TW'
