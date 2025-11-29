@@ -140,13 +140,13 @@ B 站优化。
 
 [Install](https://github.com/lilydjwg/userscripts/raw/master/bilibili.user.js)
 
-Taobao
+No Alt-num hijack
 ===
-淘宝优化。
+修复部分国内网站的 Linux 快捷键支持。
 
 * 禁用 <kbd>Alt+数字</kbd>快捷键（与 Linux 下浏览器切换标签页冲突）
 
-[Install](https://github.com/lilydjwg/userscripts/raw/master/taobao.user.js)
+[Install](https://github.com/lilydjwg/userscripts/raw/master/no-alt-num-hijack.user.js)
 
 Duolingo
 ===
