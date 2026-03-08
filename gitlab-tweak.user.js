@@ -10,7 +10,9 @@
 // @match          https://gitlab.gnome.org/*/merge_requests/*
 // @match          https://gitlab.freedesktop.org/*/issues/*
 // @match          https://gitlab.freedesktop.org/*/merge_requests/*
-// @version	   0.2.7
+// @match          https://gitlab.xfce.org/*/issues/*
+// @match          https://gitlab.xfce.org/*/merge_requests/*
+// @version	   0.2.8
 // @grant          none
 // ==/UserScript==
 
