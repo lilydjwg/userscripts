@@ -3,16 +3,21 @@
 // @namespace      https://github.com/lilydjwg/userscripts
 // @description    My GitLab tweaks
 // @match          https://gitlab.com/*/issues/*
+// @match          https://gitlab.com/*/work_items/*
 // @match          https://gitlab.com/*/merge_requests/*
 // @match          https://gitlab.archlinux.org/*/issues/*
+// @match          https://gitlab.archlinux.org/*/work_items/*
 // @match          https://gitlab.archlinux.org/*/merge_requests/*
 // @match          https://gitlab.gnome.org/*/issues/*
+// @match          https://gitlab.gnome.org/*/work_items/*
 // @match          https://gitlab.gnome.org/*/merge_requests/*
 // @match          https://gitlab.freedesktop.org/*/issues/*
+// @match          https://gitlab.freedesktop.org/*/work_items/*
 // @match          https://gitlab.freedesktop.org/*/merge_requests/*
 // @match          https://gitlab.xfce.org/*/issues/*
+// @match          https://gitlab.xfce.org/*/work_items/*
 // @match          https://gitlab.xfce.org/*/merge_requests/*
-// @version	   0.2.8
+// @version	   0.2.9
 // @grant          none
 // ==/UserScript==
 
@@ -29,7 +34,7 @@ const add_item = function(el, sidebar) {
 
 const main = function() {
   let notif, issueref
-  const is_issue = location.pathname.includes('/-/issues/')
+  const is_issue = location.pathname.includes('/-/issues/') || location.pathname.includes('/-/work_items/')
   if(is_issue) {
     notif = document.querySelector('li[data-testid="notifications-toggle-form"]')
     issueref = document.querySelector('li[data-testid="copy-reference-action"]')
